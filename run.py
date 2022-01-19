@@ -1,4 +1,5 @@
 import random
+from secret_words import secret_words
 
 class Hangman:
     """
@@ -8,7 +9,7 @@ class Hangman:
     """
 
     def __init__(self):
-        self.word = random.choice(words)
+        self.word = random.choice(secret_words)
         # show underscore instead of the word for the user
         self.display = ['_' for letter in self.word]
         self.guesses = 0
@@ -38,6 +39,7 @@ class Hangman:
         for letter in index_value:
             self.display[index_value] = letter
 
+    # check if user win
     def win_check(self, display):
         display = ''.join(self)
         word = self.word

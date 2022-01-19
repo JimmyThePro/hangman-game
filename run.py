@@ -31,10 +31,12 @@ class Hangman:
     def guess_check(self, guess_letter):
         if guess_letter in self.word:
             index_value = self.get_letter_in_word(guess_letter)
+            self.update(index_value, guess_letter)
 
-    # need update display
-    def display_update():
-
+    # update display method
+    def display_update(self, index_value, letter):
+        for letter in index_value:
+            self.display[index_value] = letter
 
 
 game()

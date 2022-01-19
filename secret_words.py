@@ -1,3 +1,4 @@
+# 100 animal words as a 'secret word' for the user
 secret_words = ['reindeer', 'bighorn', 'salamander', 'armadillo', 'coyote',
                 'llama', 'leopard', 'opossum', 'mule', 'iguana', 'octopus',
                 'woodchuck', 'horse', 'wolf', 'donkey', 'otter', 'sloth',

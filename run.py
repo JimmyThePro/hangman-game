@@ -18,7 +18,7 @@ class Hangman:
         display = ' '.join(self, display)
         print(f'Secret word (an animal): {display}')
 
-    # check if the letter is in the secret word
+    # index/char value in secret words
     def get_letter_in_word(self, guess_letter):
         positions = []
         # learned code here: https://realpython.com/python-enumerate/
@@ -26,6 +26,14 @@ class Hangman:
             if char == guess_letter:
                 positions.append(index)
         return positions
+
+    # check if our guessed letter is in the secret word
+    def guess_check(self, guess_letter):
+        if guess_letter in self.word:
+            index_value = self.get_letter_in_word(guess_letter)
+
+    # need update display
+    def display_update():
 
 
 

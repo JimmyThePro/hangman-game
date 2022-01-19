@@ -1,7 +1,7 @@
 import random
 from secret_words import secret_words
 
-class Hangman:
+class Hangman():
     """
     Main class.
     Has methods for displaying secret words,
@@ -15,8 +15,8 @@ class Hangman:
         self.guesses = 0
 
     # print display to terminal
-    def view(self, display):
-        display = ' '.join(self)
+    def view(self):
+        display = ' '.join(self.display)
         print(f'Secret word (an animal): {display}')
 
     # index/char value in secret words
@@ -37,7 +37,7 @@ class Hangman:
     # update display method
     def display_update(self, index_value, letter):
         for letter in index_value:
-            self.display[index_value] = letter
+            self.display[number] = letter
 
     # check if user win
     def win_check(self, display):
@@ -47,7 +47,11 @@ class Hangman:
             print('Yay! You win!!')
             return True
 
-
-
+def game():
+    play = Hangman()
+    guess_letter = input('Guess a letter (a-z): ')
+    play.view()
+    play.guess_check(guess_letter)
+    
 
 game()

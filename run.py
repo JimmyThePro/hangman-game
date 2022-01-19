@@ -8,14 +8,14 @@ class Hangman:
     """
 
     def __init__(self):
-        self.word = random.choice()
+        self.word = random.choice(words)
         # show underscore instead of the word for the user
         self.display = ['_' for letter in self.word]
         self.guesses = 0
 
     # print display to terminal
-    def view(self):
-        display = ' '.join(self, display)
+    def view(self, display):
+        display = ' '.join(self)
         print(f'Secret word (an animal): {display}')
 
     # index/char value in secret words
@@ -31,12 +31,21 @@ class Hangman:
     def guess_check(self, guess_letter):
         if guess_letter in self.word:
             index_value = self.get_letter_in_word(guess_letter)
-            self.update(index_value, guess_letter)
+            self.display_update(index_value, guess_letter)
 
     # update display method
     def display_update(self, index_value, letter):
         for letter in index_value:
             self.display[index_value] = letter
+
+    def win_check(self, display):
+        display = ''.join(self)
+        word = self.word
+        if display == word:
+            print('Yay! You win!!')
+            return True
+
+
 
 
 game()

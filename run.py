@@ -54,6 +54,12 @@ def game():
     while True:
         play.view()
         guess = input('Guess a letter [a-z]: ').lower()
+        if guess.isdigit():
+            print('Invalid key - Letters only please.')
+        if len(guess) > 1:
+            print('Error - One letter per guess only.')
+        if len(guess) < 1:
+            print('Error - You need to enter a letter.')
         play.guess_check(guess)
         if play.win_check():
             print('Great work! :)\n')

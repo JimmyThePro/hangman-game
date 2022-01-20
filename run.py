@@ -50,20 +50,21 @@ class Hangman:
 
 def game():
     guessed_letters = []
+    fails = 0
     play = Hangman()
     print("\nLet's play Hangman! Good luck! :)")
     while True:
         play.view()
         guess = input('Guess a letter [a-z]: ').lower()
         if guess.isdigit():
-            print('Invalid key - Letters only please.')
+            print('Error - Letters only please.')
         if len(guess) > 1:
             print('Error - One letter per guess only.')
         if len(guess) < 1:
             print('Error - You need to enter a letter.')
         play.guess_check(guess)
         if guess in guessed_letters:
-            print(f'You already guessed the letter "{guess.upper()}", try again...')
+            print(f'You already guessed "{guess.upper()}", try again...')
             continue
         for i, char in enumerate(play.word):
             if guess == char:
@@ -73,6 +74,10 @@ def game():
         if guess != char:
             print('Nope, try again...')
             guessed_letters.append(guess)
+            fails += 1
+            if fails == 6:
+                print('You lost!')
+                break
             continue
         if play.win_check():
             print('Great work! :)\n')
@@ -90,7 +95,7 @@ def game_loop():
         elif response == 'y':
             game()
         else:
-            print('Invalid key - Please enter "y" or "n" to continue')
+            print('Error - Please enter "y" or "n" to continue')
 
 
 game_loop()

@@ -1,6 +1,7 @@
 import random
 from secret_words import secret_words
 
+
 class Hangman:
     """
     Main class.
@@ -27,18 +28,18 @@ class Hangman:
                 positions.append(index)
         return positions
 
-    # update display method
-    def display_update(self, index_value, letter):
-        for number in index_value:
-            self.display[number] = letter
-
     # check if our guessed letter is in the secret word
     def guess_check(self, guess_letter):
         if guess_letter in self.word:
             index_value = self.get_letter_in_word(guess_letter)
             self.display_update(index_value, guess_letter)
 
-    # check if user win (need fix)
+    # update display method
+    def display_update(self, index_value, letter):
+        for number in index_value:
+            self.display[number] = letter
+
+    # check if user win
     def win_check(self):
         display = ''.join(self.display)
         word = self.word
@@ -46,18 +47,21 @@ class Hangman:
             print('Yay! You win!!')
             return True
 
+
 def game():
     play = Hangman()
     print("\nLet's play Hangman! Good luck! :)")
     while True:
-        play.view()                 
+        play.view()
         guess = input('Guess a letter (a-z): ')
         play.guess_check(guess)
         if play.win_check():
             print('U won!')
             break
 
-game()         
+
+game()
+
 
 def game_loop():
     while True:
@@ -68,5 +72,6 @@ def game_loop():
             game()
         else:
             print('Invalid key - Please enter "Y" or "N" to continue')
+
 
 game_loop()

@@ -61,6 +61,11 @@ def game():
         if len(guess) < 1:
             print('Error - You need to enter a letter.')
         play.guess_check(guess)
+        for i, char in enumerate(play.word):
+            if guess == char:
+                print(f'Great! "{char.upper()}" is in!')
+            else:
+                print('Nooo')
         if play.win_check():
             print('Great work! :)\n')
             break

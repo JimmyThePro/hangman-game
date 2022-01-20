@@ -40,7 +40,7 @@ class Hangman:
 
     # check if user win (need fix)
     def win_check(self):
-        display = ''.join(self, display)
+        display = ''.join(self.display)
         word = self.word
         if display == word:
             print('Yay! You win!!')
@@ -48,12 +48,25 @@ class Hangman:
 
 def game():
     play = Hangman()
+    print("\nLet's play Hangman! Good luck! :)")
     while True:
-        play.view()
+        play.view()                 
         guess = input('Guess a letter (a-z): ')
         play.guess_check(guess)
-        if play.win_check() is True:
+        if play.win_check():
+            print('U won!')
             break
 
+game()         
 
-game()
+def game_loop():
+    while True:
+        response = input('Wanna play again? (Y/N): ')
+        if response == 'n':
+            break
+        elif response == 'y':
+            game()
+        else:
+            print('Invalid key - Please enter "Y" or "N" to continue')
+
+game_loop()

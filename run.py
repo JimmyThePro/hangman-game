@@ -68,15 +68,15 @@ def game():
             continue
         for i, char in enumerate(play.word):
             if guess == char:
-                print(f'Great! "{char.upper()}" is in!')
+                print(f'\nGreat! "{char.upper()}" is in!')
                 guessed_letters.append(guess)
                 break
         if guess != char:
-            print('Nope, try again...')
+            print(f'\nNope, "{guess.upper()}" is not in...')
             guessed_letters.append(guess)
             fails += 1
             if fails == 6:
-                print('You lost!')
+                print('\nYou lost... Game Over!\n')
                 break
             continue
         if play.win_check():

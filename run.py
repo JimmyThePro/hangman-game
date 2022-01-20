@@ -44,7 +44,7 @@ class Hangman:
         display = ''.join(self.display)
         word = self.word
         if display == word:
-            print('\nYay, you did it!')
+            print(f'\nYay, you did it! [{word.upper()}] is correct.')
             return True
 
 

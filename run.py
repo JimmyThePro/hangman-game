@@ -49,6 +49,7 @@ class Hangman:
 
 
 def game():
+    guessed_letters = []
     play = Hangman()
     print("\nLet's play Hangman! Good luck! :)")
     while True:
@@ -61,11 +62,18 @@ def game():
         if len(guess) < 1:
             print('Error - You need to enter a letter.')
         play.guess_check(guess)
+        if guess in guessed_letters:
+            print(f'You already guessed the letter "{guess.upper()}", try again...')
+            continue
         for i, char in enumerate(play.word):
             if guess == char:
                 print(f'Great! "{char.upper()}" is in!')
-            else:
-                print('Nooo')
+                guessed_letters.append(guess)
+                break
+        if guess != char:
+            print('Nope, try again...')
+            guessed_letters.append(guess)
+            continue
         if play.win_check():
             print('Great work! :)\n')
             break

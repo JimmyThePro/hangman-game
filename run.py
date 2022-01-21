@@ -1,6 +1,7 @@
 import random
+import string
 from secret_words import secret_words
-from hangman_pictures import hangman_stages, victory
+from hangman_pictures import hangman_stages
 
 
 class Hangman:
@@ -77,14 +78,8 @@ def game():
     while True:
         play.view()
         guess = input('Guess a letter [a-z]: ').lower()
-        if guess.isdigit():
-            print('Error - Letters only please.')
-        if len(guess) > 1:
-            print('Error - One letter per guess only.')
-            continue
-        if len(guess) < 1:
-            print('Error - You need to enter a letter.')
-        if (not guess):
+        if guess not in string.ascii_letters:
+            print('Error! - You can only guess with one letter.')
             continue
         play.guess_check(guess)
         if guess in guessed_letters:
@@ -92,7 +87,7 @@ def game():
             continue
         for i, char in enumerate(play.word):
             if guess == char:
-                print(f'\nGreat! "{char.upper()}" is in.')
+                print(f'\n★ Great! "{char.upper()}" is in ★')
                 guessed_letters.append(guess)
                 break
         if guess != char:
@@ -106,9 +101,9 @@ def game():
                 break
             continue
         if play.win_check():
-            print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
-            print('             CONGRATZ!')
-            print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
+            print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
+            print('                 CONGRATZ!')
+            print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
             print('\nGreat work! You won! :)\n')
             break
 

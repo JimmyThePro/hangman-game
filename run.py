@@ -81,8 +81,11 @@ def game():
             print('Error - Letters only please.')
         if len(guess) > 1:
             print('Error - One letter per guess only.')
+            continue
         if len(guess) < 1:
             print('Error - You need to enter a letter.')
+        if (not guess):
+            continue
         play.guess_check(guess)
         if guess in guessed_letters:
             print(f'You already guessed "{guess.upper()}", try again...')
@@ -98,6 +101,7 @@ def game():
             print(hangman_stages[fails])
             fails += 1
             if fails == 6:
+                print(f'[{play.word.upper()}] was the Secret word.\n')
                 print('You lost... GAME OVER!\n')
                 break
             continue

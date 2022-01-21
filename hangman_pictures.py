@@ -1,4 +1,5 @@
-hangman_stages = [  
+# Learned ascii arrt here: https://www.messletters.com/
+hangman_stages = [
                 """
                    --------
                    |      |
@@ -57,11 +58,18 @@ fail left.         |      |
                 """
                    --------
                    |      |
-You lost!          |      O
+Ugh.. Ouch!        |      O
     :(             |     /|\\
-GAME OVER          |      |
-                   |     / \\
+Better luck        |      |
+next time.         |     / \\
                    |
                 =================
                 """
     ]
+
+victory = [
+        """
+        ｡☆✼★━━━━━━━━━━━━★✼☆｡
+                CONGRATZ!
+        ｡☆✼★━━━━━━━━━━━━★✼☆｡
+        """]

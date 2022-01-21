@@ -1,5 +1,6 @@
 import random
 from secret_words import secret_words
+from hangman_pictures import hangman_stages
 
 
 class Hangman:
@@ -52,7 +53,22 @@ def game():
     guessed_letters = []
     fails = 0
     play = Hangman()
-    print("\nLet's play Hangman! Good luck! :)")
+    # Learned https://www.messletters.com/sv/text-art/
+    print(' __| |_________________________________________________| |__')
+    print('(__   _________________________________________________   __)')
+    print('   | |                                                 | |')
+    print('   | |               Lets play HANGMAN!                | |')
+    print('   | |                 (Animal words)                  | |')
+    print('   | |                                                 | |')
+    print('   | |  Rules:   You have 7 fails until GAME OVER.     | |')
+    print('   | |           Only guess with ONE letter.           | |')
+    print('   | |           If you get the secret word            | |')
+    print('   | |           correct, you win!                     | |')
+    print('   | |                                                 | |')
+    print('   | |                   GOOD LUCK!                    | |') 
+    print(' __| |_________________________________________________| |__')
+    print('(__   _________________________________________________   __)')
+    print('   | |                                                 | |')
     while True:
         play.view()
         guess = input('Guess a letter [a-z]: ').lower()
@@ -72,7 +88,8 @@ def game():
                 guessed_letters.append(guess)
                 break
         if guess != char:
-            print(f'\nNope, "{guess.upper()}" is not in...')
+            print(hangman_stages[0])
+            print(f'Ooops!, "{guess.upper()}" is not in...')
             guessed_letters.append(guess)
             fails += 1
             if fails == 6:

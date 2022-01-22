@@ -146,6 +146,7 @@ def game_loop():
     while True:
         response = input('Start a new game? [y/n]: ').lower()
         if response == 'n':
+            print('Closing game...\n')
             break
         elif response == 'y':
             game()

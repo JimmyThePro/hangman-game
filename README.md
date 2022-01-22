@@ -1,17 +1,19 @@
 # **HANGMAN**
 "Hangman" is a python terminal game, which runs in a terminal on Heroku (https://www.heroku.com/).
 This fun little game is for people that enjoy to challenge themself, and of course for "hangman game" addicts.
+
 Users get a random word they need to guess, one letter at the time. But beware, if you get 6 failed guesses, you lose!
-Sounds easy right? Well... it's not! Go try and see: https://jimmythepro.github.io/einstein-quiz/
+Sounds easy right? Well... it's not! Go try and see: https://hangman-game3.herokuapp.com/
 <br/><br/>
 
-![hangman game](assets/images/responsive.png)
+![hangman game](images/hangman_game.png)
 
 ## How to play
+***
 
 This game is a classic hangman game, you can read more about hangman here: https://en.wikipedia.org/wiki/Hangman_(game)
 
-    - This game will start when landing on this domain: 
+    - This game will start when landing on this domain: https://hangman-game3.herokuapp.com/
     - First, user needs to enter a Name.
     - User will get a random "Secret word" from our library (100 secret words added, animalwords only).
     - And now the user can start to guess a letter. User will only see "underscores" as the secret word, so if the secret word is "LION", the user will see "_ _ _ _".
@@ -22,6 +24,7 @@ This game is a classic hangman game, you can read more about hangman here: https
 ![image](assets/images/main_page.png)
 
 ## Features
+***
 
 * **Existing Features**
 
@@ -39,7 +42,6 @@ This game is a classic hangman game, you can read more about hangman here: https
     - An 'ascii hangman art' is shown for each failed letters guessed.
     - When a user win, he/she can play a new game or quit game.
     - When a user lose, he/she can play a new game or quit game.
-
 <br/><br/>
 
 ![image](assets/images/logo_favicon.png)
@@ -51,11 +53,13 @@ This game is a classic hangman game, you can read more about hangman here: https
 <br/><br/>
 
 ## Data Model
+***
 
 I used a Hangman class as my model. The Hangman class stores the secret word.
 The class also has methods to help play the game, such as tracks letters in a secret word, track if a guessed letter is correct and also track if/when a user wins.
 
 ## UX
+***
 
 A Hangman enthusiast or a thrill seeker will find this game very fun!
 I bet the user will play until he/she falls asleep.
@@ -83,9 +87,10 @@ I bet the user will play until he/she falls asleep.
     - I made a flow chart to get a better understanding of the game steps.
 <br/><br/>
 
-![flow chart](assets/images/wireframe.png)
+![flow chart](images/flow_chart.png)
 
 ## Testing
+***
 
 * **Validator testing**
 
@@ -93,67 +98,63 @@ I bet the user will play until he/she falls asleep.
         - No errors or warnings detected when checked on: http://pep8online.com/
 <br/><br/>
 
-![lighthouse score](assets/images/lighthouse.png)
+![flow chart](images/pep8online.png)
 
 ## Bugs
+***
 
     - No bugs detected.
 
 ## Unfixed bugs
+***
 
     - No unfixed bugs.
 
 ## Technologies
+***
 
 * **Languages used**
 
     - Python
 
 ## Programs
+***
 
     - Gitpod, used for code writing.
     - Githud, store data.
     - Git, version control.
+    - Heroku, for deployment.
 
 ## Deployment
+***
+This project was deployed using Code Institute's template for Heroku.
 
-* **Was deployed to Github pages. The steps are:**
+* **Was deployed to Heroku. The steps are:**
 
-    - Github repository --> settings tab --> source section drop-down menu --> main
-    - When selected "main", page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-    - The site link: https://jimmythepro.github.io/einstein-quiz/
+    - Create a new Heroku app.
+    - Set the buildpacks to python and NodeJS in correct order.
+    - Link the heroku app to correct repository.
+    - Click on Deploy.
 
 ## Credits
+***
+To complete this 'Hangman game' I used Code Institute student template: https://github.com/Code-Institute-Org/python-essentials-template
 
-Also got help and tips from my mentor Adegbenga Adeye.
-To complete this 'Einstein Quiz' I used Code Institute student template: https://tinyurl.com/2p8mh8y9
+Taken inspiration from: https://www.youtube.com/watch?v=lJ7RhvNvsnc / https://www.youtube.com/watch?v=ZQctDp1I-LE
 <br/><br/>
 
 * **Content**
 
-    - Question examples picked from https://tinyurl.com/4wparj3a / https://tinyurl.com/3c7c3nn4 / https://tinyurl.com/ecxc7tsf
-    - Fonts (Bubblegum Sans, Open Sans) imported from https://fonts.google.com/
-    - Learned reload button here: https://tinyurl.com/39e3f3pn
-    - Learned "checked radiobutton" code here: https://tinyurl.com/59ddenvd
-    - Got information to uncheck radio buttons here: https://tinyurl.com/yc5a78th
-    - Color palette picked from https://colorhunt.co/
+    - All animal words generated here: https://www.randomlists.com/random-animals
+    - Learned "enumerate code" code here: https://realpython.com/python-enumerate/
+    - Learned arcii art here: https://www.messletters.com/
+    - Learned 'string.ascii_letters' from: https://tinyurl.com/5n88vmfa
     - Used Tinyurl to shorten the links - https://tinyurl.com/app/
 <br/><br/>
 
 * **Media**
 
-    - All the images taken from https://www.pexels.com/ and https://www.freepik.com/
-    - The icons is taken from https://fontawesome.com/
-    - Used GIMP/paint for scaling the images, and GIMP for favicon image - https://www.gimp.org/
+    - Used windows paint to create a flow chart.
 <br/><br/>
 
-* **Colors and fonts**
-
-    - Background color: #ffffff
-    - Body font color: #252A34
-    - Heading font color: #676FA3
-    - Button color: #f8a6aa
-    - Fonts used: 'Bubblegum Sans' and 'Open Sans'.
-<br/><br/>
-
-[Back to Top](#Einstein-Quiz)
+[Back to Top](#HANGMAN)

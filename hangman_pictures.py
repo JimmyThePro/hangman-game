@@ -1,4 +1,4 @@
-# Learned ascii arrt here: https://www.messletters.com/
+# Learned ascii art here: https://www.messletters.com/
 hangman_stages = [
                 """
                    --------

@@ -66,6 +66,10 @@ class Hangman:
 
 
 def game():
+    """
+    Function that open up a new game, and user can enter a name,
+    and start guessing letters, until he/she win or lose.
+    """
     guessed_letters = []
     fails = 0
     play = Hangman()
@@ -136,8 +140,8 @@ game()
 
 def game_loop():
     """
-    Function loop after a user wins or loses a game,
-    Y or N, if user want to start a new game or not.
+    Function loop after a user win or lose a game,
+    Y or N to input if user want to start a new game or not.
     """
     while True:
         response = input('Start a new game? [y/n]: ').lower()

@@ -1,5 +1,6 @@
 import random
 import string
+
 from secret_words import secret_words
 from hangman_pictures import hangman_stages
 
@@ -12,17 +13,25 @@ class Hangman:
     """
 
     def __init__(self):
+        """
+        Pick a random word in secret_words and
+        show underscore instead of the word for the user.
+        """
         self.word = random.choice(secret_words)
         # Show underscore instead of the word for the user
         self.display = ['_' for letter in self.word]
 
-    # Print display to terminal
     def view(self):
+        """
+        Print display to terminal.
+        """
         display = ' '.join(self.display).upper()
         print(f'\nSecret word (an animal): {display}')
 
-    # Index/char value in secret words
     def get_letter_in_word(self, guess_letter):
+        """
+        Index/char value in secret words.
+        """
         positions = []
         # Learned code here: https://realpython.com/python-enumerate/
         for index, char in enumerate(list(self.word)):
@@ -30,19 +39,25 @@ class Hangman:
                 positions.append(index)
         return positions
 
-    # Check if our guessed letter is in the secret word
     def guess_check(self, guess_letter):
+        """
+        Check if guessed letter is in the secret word.
+        """
         if guess_letter in self.word:
             index_value = self.get_letter_in_word(guess_letter)
             self.display_update(index_value, guess_letter)
 
-    # Update display method
     def display_update(self, index_value, letter):
+        """
+        'Update display' method.
+        """
         for number in index_value:
             self.display[number] = letter
 
-    # Check if user win
     def win_check(self):
+        """
+        Check if user wins.
+        """
         display = ''.join(self.display)
         word = self.word
         if display == word:
@@ -56,30 +71,38 @@ def game():
     play = Hangman()
 
     # Learned ascii art here: https://www.messletters.com/
-    print(' __| |_________________________________________________| |__')
+    print('\n __| |_________________________________________________| |__')
     print('(__   _________________________________________________   __)')
     print('   | |                                                 | |')
-    print('   | |               Lets play HANGMAN!                | |')
+    print("   | |               Let's play HANGMAN!               | |")
     print('   | |                 (Animal words)                  | |')
     print('   | |                                                 | |')
-    print('   | |  Rules:   You have 6 fails until GAME OVER.     | |')
+    print('   | |   Rules:  You have 6 fails until GAME OVER.     | |')
     print('   | |           Only guess with ONE letter.           | |')
     print('   | |           If you get the secret word            | |')
     print('   | |           correct, you win!                     | |')
     print('   | |                                                 | |')
-    print('   | |                   GOOD LUCK!                    | |') 
+    print('   | |                   GOOD LUCK!                    | |')
     print(' __| |_________________________________________________| |__')
     print('(__   _________________________________________________   __)')
     print('   | |                                                 | |\n')
 
     user = input('Enter your Name please: ')
-    print(f'Welcome {user}! Remember: The Secret Word is an ANIMAL - Go!')
+    while len(user) == 0:
+        user = input('Error! - You need to enter your Name: ')
+        if len(user) >= 1:
+            break
 
+    print(f"Welcome {user}! Let's play!")
     while True:
         play.view()
         guess = input('Guess a letter [a-z]: ').lower()
+        # Learned code here: https://tinyurl.com/5n88vmfa
         if guess not in string.ascii_letters:
-            print('Error! - You can only guess with one letter.')
+            print('\nError! - You can only guess with one letter.')
+            continue
+        if len(guess) == 0:
+            print('\nError! - You need to enter a letter')
             continue
         play.guess_check(guess)
         if guess in guessed_letters:
@@ -97,14 +120,14 @@ def game():
             fails += 1
             if fails == 6:
                 print(f'[{play.word.upper()}] was the Secret word.\n')
-                print('You lost... GAME OVER!\n')
+                print(f'Sorry {user}, you lost... GAME OVER!\n')
                 break
             continue
         if play.win_check():
             print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
-            print('                 CONGRATZ!')
+            print('                WINNER!')
             print('｡☆✼★━━━━━━━━━━━━━━━━━━━━━━━━━━━━━★✼☆｡')
-            print('\nGreat work! You won! :)\n')
+            print(f'\nGreat work {user}! You won! :)\n')
             break
 
 
@@ -112,14 +135,18 @@ game()
 
 
 def game_loop():
+    """
+    Function loop after a user wins or loses a game,
+    Y or N, if user want to start a new game or not.
+    """
     while True:
-        response = input('Wanna play again? [y/n]: ').lower()
+        response = input('Start a new game? [y/n]: ').lower()
         if response == 'n':
             break
         elif response == 'y':
             game()
         else:
-            print('Error - Please enter "y" or "n" to continue\n')
+            print('Error! - Please enter "y" or "n" to continue\n')
 
 
 game_loop()

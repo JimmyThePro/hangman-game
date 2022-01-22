@@ -91,16 +91,16 @@ def game():
     print('(__   _________________________________________________   __)')
     print('   | |                                                 | |\n')
 
-    user = input('Enter your Name please: ')
+    user = input('Enter your Name please: \n')
     while len(user) == 0:
-        user = input('Error! - You need to enter your Name: ')
+        user = input('Error! - You need to enter your Name: \n')
         if len(user) >= 1:
             break
 
     print(f"Welcome {user}! Let's play!")
     while True:
         play.view()
-        guess = input('Guess a letter [a-z]: ').lower()
+        guess = input('Guess a letter [a-z]: \n').lower()
         # Learned code here: https://tinyurl.com/5n88vmfa
         if guess not in string.ascii_letters:
             print('\nError! - You can only guess with one letter.')
@@ -144,7 +144,7 @@ def game_loop():
     Y or N to input if user want to start a new game or not.
     """
     while True:
-        response = input('Start a new game? [y/n]: ').lower()
+        response = input('Start a new game? [y/n]: \n').lower()
         if response == 'n':
             print('Closing game...\n')
             break

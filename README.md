@@ -19,9 +19,6 @@ This game is a classic hangman game, you can read more about hangman here: https
     - And now the user can start to guess a letter. User will only see "underscores" as the secret word, so if the secret word is "LION", the user will see "_ _ _ _".
     - User can guess one letter at the time, and get '6 fails' until he/she fails the game.
     - If user manage to guess all letters right in the secret word, it's a win!
-<br/><br/>
-
-![image](assets/images/main_page.png)
 
 ## Features
 ***
@@ -44,7 +41,15 @@ This game is a classic hangman game, you can read more about hangman here: https
     - When a user lose, he/she can play a new game or quit game.
 <br/><br/>
 
-![image](assets/images/logo_favicon.png)
+![image](images/hangman_features01.png)
+
+![image](images/hangman_features02.png)
+
+![image](images/hangman_features03.png)
+
+![image](images/hangman_features04.png)
+
+![image](images/hangman_features05.png)
 
 * **Future Features**
 
@@ -56,7 +61,8 @@ This game is a classic hangman game, you can read more about hangman here: https
 ***
 
 I used a Hangman class as my model. The Hangman class stores the secret word.
-The class also has methods to help play the game, such as tracks letters in a secret word, track if a guessed letter is correct and also track if/when a user wins.
+The class also has methods to help play the game, such as tracks letters in a secret word, check current status on the game, track if a guessed letter is correct and also track if/when a user wins. Also using 'while loops' for validation and for creating a game loop.
+<br/><br/>
 
 ## UX
 ***
@@ -79,7 +85,7 @@ I bet the user will play until he/she falls asleep.
 * **Business owner**
 
     - I want to entertain my users, and provide them with many laughs!
-    - This site will add alot of positive vibes to the users.
+    - This game will add alot of positive vibes to the users.
 <br/><br/>
 
 * **Wireframes**
@@ -98,7 +104,7 @@ I bet the user will play until he/she falls asleep.
         - No errors or warnings detected when checked on: http://pep8online.com/
 <br/><br/>
 
-![flow chart](images/pep8online.png)
+![pep8online](images/pep8online.png)
 
 ## Bugs
 ***
@@ -135,6 +141,7 @@ This project was deployed using Code Institute's template for Heroku.
     - Set the buildpacks to python and NodeJS in correct order.
     - Link the heroku app to correct repository.
     - Click on Deploy.
+<br/><br/>
 
 ## Credits
 ***
@@ -154,7 +161,7 @@ Taken inspiration from: https://www.youtube.com/watch?v=lJ7RhvNvsnc / https://ww
 
 * **Media**
 
-    - Used windows paint to create a flow chart.
+    - Used windows paint to create a flow chart, and crop images for readme file.
 <br/><br/>
 
 [Back to Top](#HANGMAN)

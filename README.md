@@ -41,15 +41,15 @@ This game is a classic hangman game, you can read more about hangman here: https
     - When a user lose, he/she can play a new game or quit game.
 <br/><br/>
 
-![image](images/hangman_features01.png)
+![features](images/hangman_features01.png)
 
-![image](images/hangman_features02.png)
+![features](images/hangman_features02.png)
 
-![image](images/hangman_features03.png)
+![features](images/hangman_features03.png)
 
-![image](images/hangman_features04.png)
+![features](images/hangman_features04.png)
 
-![image](images/hangman_features05.png)
+![features](images/hangman_features05.png)
 
 * **Future Features**
 
@@ -88,7 +88,7 @@ I bet the user will play until he/she falls asleep.
     - This game will add alot of positive vibes to the users.
 <br/><br/>
 
-* **Wireframes**
+* **Flow chart**
 
     - I made a flow chart to get a better understanding of the game steps.
 <br/><br/>
@@ -146,8 +146,11 @@ This project was deployed using Code Institute's template for Heroku.
 ## Credits
 ***
 To complete this 'Hangman game' I used Code Institute student template: https://github.com/Code-Institute-Org/python-essentials-template
+(and for the deployment terminal)
 
 Taken inspiration from: https://www.youtube.com/watch?v=lJ7RhvNvsnc / https://www.youtube.com/watch?v=ZQctDp1I-LE
+
+Wikipedia for the details of Hangman games.
 <br/><br/>
 
 * **Content**
